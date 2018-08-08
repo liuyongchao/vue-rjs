@@ -78,6 +78,7 @@ export default {
           this.$store
             .dispatch("Login", this.loginForm)
             .then(() => {
+              debugger
               this.loading = false;
               this.$router.push({ path: "/home" });
             })
