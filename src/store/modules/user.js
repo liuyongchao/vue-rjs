@@ -17,6 +17,7 @@ const user = {
       state.name = name
     },
     SET_AVATAR: (state, avatar) => {
+      debugger
       state.avatar = avatar
     },
     SET_ROLES: (state, roles) => {
@@ -31,7 +32,7 @@ const user = {
       return new Promise((resolve, reject) => {
         login(username, userInfo.password,userInfo.remember).then(response => {
           const data = response.data
-          debugger
+         
           setToken(data.token)
           
           commit('SET_TOKEN', data.token)
@@ -52,7 +53,7 @@ const user = {
           } else {
             reject('getInfo: roles must be a non-null array !')
           }
-          commit('SET_NAME', data.name)
+          commit('SET_NAME', data.user.name)
           commit('SET_AVATAR', data.avatar)
           resolve(response)
         }).catch(error => {
