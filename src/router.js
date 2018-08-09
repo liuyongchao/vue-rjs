@@ -24,7 +24,7 @@ import Layout from '@/views/layout/Layout'
 export const constantRouterMap = [
   { path: '/login', component: () => import('@/views/login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
-
+  //首页
   {
     path: '/',
     component: Layout,
@@ -42,7 +42,7 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '首页', icon: 'example' },
     children: [
       {
         path: 'table',
@@ -58,11 +58,45 @@ export const constantRouterMap = [
       }
     ]
   },
-
+  //产品办理
   {
     path: '/form',
     component: Layout,
+    meta: {
+      title: '产品办理',
+      icon: 'form'
+    },
     children: [
+      {
+        path: 'index',
+        name: 'Soft',
+        component: () => import('@/views/form/index'),
+        meta: { title: '软件著作', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'ProductTest',
+        component: () => import('@/views/form/index'),
+        meta: { title: '产品测试', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'CompanyAuth',
+        component: () => import('@/views/form/index'),
+        meta: { title: '企业认证', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'CMMIAuth',
+        component: () => import('@/views/form/index'),
+        meta: { title: 'CMMI认证', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'CompanyAssessment',
+        component: () => import('@/views/form/index'),
+        meta: { title: '企业评估', icon: 'form' }
+      },
       {
         path: 'index',
         name: 'Form',
@@ -70,6 +104,117 @@ export const constantRouterMap = [
         meta: { title: 'Form', icon: 'form' }
       }
     ]
+  },
+
+  //统计管理
+  {
+    path: '/form',
+    component: Layout,
+    meta: {
+      title: '统计管理',
+      icon: 'form'
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'Soft',
+        component: () => import('@/views/form/index'),
+        meta: { title: '软件著作', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'ProductTest',
+        component: () => import('@/views/form/index'),
+        meta: { title: '产品测试', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'CompanyAuth',
+        component: () => import('@/views/form/index'),
+        meta: { title: '企业认证', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'CMMIAuth',
+        component: () => import('@/views/form/index'),
+        meta: { title: 'CMMI认证', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'CompanyAssessment',
+        component: () => import('@/views/form/index'),
+        meta: { title: '企业评估', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: 'Form', icon: 'form' }
+      }
+    ]
+  },
+
+  //业务管理
+  {
+    path: '/form',
+    component: Layout,
+    meta: {
+      title: '业务管理',
+      icon: 'form'
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'Soft',
+        component: () => import('@/views/form/index'),
+        meta: { title: '产品管理', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'ProductTest',
+        component: () => import('@/views/form/index'),
+        meta: { title: '流程管理', icon: 'form' }
+      }]
+  },
+
+  //系统管理
+  {
+    path: '/form',
+    component: Layout,
+    meta: {
+      title: '系统管理',
+      icon: 'form'
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'Soft',
+        component: () => import('@/views/form/index'),
+        meta: { title: '用户管理', icon: 'form' }
+      },
+      {
+        path: 'index',
+        name: 'ProductTest',
+        component: () => import('@/views/form/index'),
+        meta: { title: '角色管理', icon: 'form' }
+      }]
+  },
+
+  //个人信息
+  {
+    path: '/form',
+    component: Layout,
+    meta: {
+      title: '个人信息',
+      icon: 'form'
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'Soft',
+        component: () => import('@/views/form/index'),
+        meta: { title: '修改密码', icon: 'form' }
+      }]
   },
 
   {

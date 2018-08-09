@@ -17,7 +17,7 @@ const user = {
       state.name = name
     },
     SET_AVATAR: (state, avatar) => {
-      debugger
+
       state.avatar = avatar
     },
     SET_ROLES: (state, roles) => {

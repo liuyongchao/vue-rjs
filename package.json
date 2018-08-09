@@ -24,6 +24,7 @@
     "@vue/eslint-config-prettier": "^3.0.0-rc.10",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "svg-sprite-loader": "^3.8.0",
     "vue-template-compiler": "^2.5.16"
   }
 }
