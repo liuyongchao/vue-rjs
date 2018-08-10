@@ -87,6 +87,7 @@
     min-width: 180px !important;
     background-color: $subMenuBg !important;
     &:hover {
+      color:$menuHoverText !important;
       background-color: $menuHover !important;
     }
   }
