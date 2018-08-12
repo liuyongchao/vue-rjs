@@ -31,27 +31,13 @@
     </el-main>
   </el-container> 
     <el-container>
-      <el-main>
-<!-- <home-statistics><home-statistics> -->
+      <el-main >
+        <home-statistics refs="subcomponent" :substyle="substyle"></home-statistics>
          </el-main>
     </el-container>
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     <div class="home-text">name:{{name}}</div>
     <div class="home-text">roles:<span v-for='role in roles' :key='role'>{{role}}</span></div>
   </div>
@@ -59,11 +45,11 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { Message, MessageBox } from "element-ui";
-import HomeStatistics from './HomeStatistics';
+import { MessageBox } from "element-ui";
+import HomeStatistics from "./HomeStatistics";
 
 export default {
-  components:{HomeStatistics},
+  components: { HomeStatistics },
   name: "home",
   data() {
     const item = {
@@ -77,6 +63,7 @@ export default {
       updatetime: "2018-08-21"
     };
     return {
+      substyle: { width: "90%", height: "500px" },
       tableData: Array(5).fill(item)
     };
   },
