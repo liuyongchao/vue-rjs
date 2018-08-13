@@ -31,9 +31,9 @@ export const constantRouterMap = [
   //首页
   {
     path: "/",
+    name: "Home",
     component: Layout,
     redirect: "/home",
-    name: "Home",
     hidden: true,
     children: [
       {
@@ -44,9 +44,9 @@ export const constantRouterMap = [
   },
   {
     path: "/product",
+    name: "product",
     component: Layout,
     redirect: "/product/productsoftwarecopyright",
-    name: "example",
     meta: { title: "产品办理", icon: "form" },
     children: [
       {
@@ -56,19 +56,19 @@ export const constantRouterMap = [
         meta: { title: "软件著作", icon: "form" }
       },
       {
-        path: "ProductSoftwareTest",
+        path: "productsoftwaretest",
         name: "ProductSoftwareTest",
         component: () => import("@/views/product/ProductSoftwareTest"),
         meta: { title: "产品测试", icon: "form" }
       },
       {
-        path: "ProductHi-techprodution",
+        path: "productHi-techprodution",
         name: "ProductHi-techprodution",
         component: () => import("@/views/product/ProductHi-techprodution"),
         meta: { title: "企业认证", icon: "form" }
       },
       {
-        path: "ProductCMMICertification",
+        path: "productCMMIcertification",
         name: "ProductCMMICertification",
         component: () => import("@/views/product/ProductCMMICertification"),
         meta: { title: "CMMI认证", icon: "form" }
@@ -85,9 +85,9 @@ export const constantRouterMap = [
   //统计管理
   {
     path: "/statistics",
+    name: "statistics",
     component: Layout,
     redirect: "/statistics/StatisticsSoftwareCopyright",
-    name: "statistics",
     meta: { title: "统计管理", icon: "example" },
     children: [
       {
@@ -288,7 +288,7 @@ export const constantRouterMap = [
 ];
 
 export default new Router({
-  mode: 'history', //后端支持可开
+  mode: "history", //后端支持可开
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap
 });

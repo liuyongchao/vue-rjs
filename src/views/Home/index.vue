@@ -19,13 +19,25 @@
         </el-table-column>
         <el-table-column prop="tel" label="联系电话" width="100" align="center" header-align="center">
         </el-table-column>
-        <el-table-column prop="product" label="产品" width="120" align="center" header-align="center">
+        <el-table-column prop="product" label="产品" width="120" align="center" header-align="center" :filters="productFilter" :filter-method="filterProduct">
         </el-table-column>
-        <el-table-column prop="status" label="状态" width="120" align="center" header-align="center">
+        <el-table-column prop="status" label="状态" width="120" align="center" header-align="center" :filters="statusFilter" :filter-method="filterStauts">
         </el-table-column>
-        <el-table-column prop="createtime" label="创建时间" width="90" header-align="center">
+       
+
+        
+         <el-table-column prop="createtime" label="创建时间" width="100" header-align="center" sortable>
+         <template slot-scope="scope">
+        <i class="el-icon-time"></i>
+        <span>{{scope.row.createtime}}</span>
+        </template>        
         </el-table-column>
-        <el-table-column prop="updatetime" label="更新时间" width="90" header-align="center">
+        <i class="el-icon-time"></i>
+        <el-table-column prop="updatetime" label="更新时间" width="100" header-align="center" sortable>
+         <template slot-scope="scope">
+        <i class="el-icon-time"></i>
+        <span>{{scope.row.updatetime}}</span>
+        </template>
         </el-table-column>
       </el-table>
     </el-main>
@@ -52,19 +64,69 @@ export default {
   components: { HomeStatistics },
   name: "home",
   data() {
-    const item = {
-      todolist: "高新技术企业认证",
-      applicant: "王小虎",
-      companyname: "三星电子",
-      tel: "17600600600",
-      product: "新办",
-      status: "等待网填",
-      createtime: "2018-08-10",
-      updatetime: "2018-08-21"
-    };
     return {
-      substyle: { width: "90%", height: "500px" },
-      tableData: Array(5).fill(item)
+      statusFilter: [
+        { text: "等待网填", value: "等待网填" },
+        { text: "邮寄证书", value: "邮寄证书" }
+      ],
+      productFilter: [
+        { text: "新办", value: "新办" },
+        { text: "补办", value: "补办" }
+      ],
+      tableData: [
+        {
+          todolist: "软件著作权",
+          applicant: "王小豹",
+          companyname: "三星电子",
+          tel: "17600600600",
+          product: "新办",
+          status: "等待网填",
+          createtime: "2018-08-10",
+          updatetime: "2018-08-21"
+        },
+        {
+          todolist: "高新技术企业认证",
+          applicant: "王小虎",
+          companyname: "三星电子",
+          tel: "17600600600",
+          product: "补办",
+          status: "邮寄证书",
+          createtime: "2018-08-11",
+          updatetime: "2018-08-22"
+        },
+        {
+          todolist: "CMMI认证",
+          applicant: "王小六",
+          companyname: "海尔集团",
+          tel: "17600600600",
+          product: "新办",
+          status: "等待处理",
+          createtime: "2018-08-12",
+          updatetime: "2018-08-23"
+        },
+        {
+          todolist: "高新技术企业认证",
+          applicant: "王小虎",
+          companyname: "三星电子",
+          tel: "17600600600",
+          product: "新办",
+          status: "等待网填",
+          createtime: "2018-08-13",
+          updatetime: "2018-08-24"
+        },
+        {
+          todolist: "高新技术企业认证",
+          applicant: "王小虎",
+          companyname: "三星电子",
+          tel: "17600600600",
+          product: "新办",
+          status: "等待网填",
+          createtime: "2018-08-14",
+          updatetime: "2018-08-25"
+        }
+      ],
+      substyle: { width: "90%", height: "500px" }
+      // tableData: Array(5).fill(item)
     };
   },
   methods: {
@@ -74,6 +136,12 @@ export default {
         confirmButtonText: "确定",
         type: "success"
       });
+    },
+    filterProduct(value, row) {
+      return row.product === value;
+    },
+    filterStauts(value, row) {
+      return row.status === value;
     }
   },
   computed: {
